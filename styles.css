@@ -1,71 +1,90 @@
 .calculator-section {
   padding: 80px 50px;
-  background-color: #0f172a; /* dark background */
-  color: #e2e8f0; /* light text */
+  background-color: #0f172a;
+  color: #e2e8f0;
   text-align: center;
 }
 
 .calculator-section h2 {
   font-size: 36px;
   margin-bottom: 10px;
-  color: #38bdf8; /* bright heading color */
+  color: #38bdf8;
+  font-weight: 600;
 }
 
 .calculator-section p {
   font-size: 16px;
-  margin-bottom: 30px;
-  color: #94a3b8; /* softer description */
+  margin-bottom: 40px;
+  color: #94a3b8;
+  line-height: 1.5;
 }
 
 .calculator {
   width: 320px;
+  max-width: 90%;
   margin: 0 auto;
-  padding: 20px;
+  padding: 25px 20px;
   background-color: #1e293b;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  border-radius: 15px;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.6);
 }
 
 .display {
-  width: 100%;
-  height: 50px;
+  width: 100%;            
+  height: 55px;
   background-color: #0f172a;
   border: none;
-  border-radius: 8px;
-  margin-bottom: 15px;
-  padding: 0 10px;
-  font-size: 22px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  padding: 0 15px;        
+  font-size: 24px;
   color: #e2e8f0;
   text-align: right;
+  box-shadow: inset 0 3px 6px rgba(0,0,0,0.3);
+  box-sizing: border-box;  
+  display: block;        
 }
+
 
 .buttons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  gap: 12px;
 }
 
 .buttons button {
   padding: 18px;
   font-size: 18px;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   background-color: #0f172a;
   color: #e2e8f0;
-  font-weight: bold;
+  font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
 .buttons button:hover {
   background-color: #38bdf8;
   color: #020617;
   transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(56,189,248,0.5);
+  box-shadow: 0 8px 20px rgba(56,189,248,0.4);
 }
 
 @media (max-width: 400px) {
   .calculator {
     width: 90%;
+    padding: 20px 15px;
+  }
+
+  .display {
+    font-size: 20px;
+    height: 50px;
+  }
+
+  .buttons button {
+    font-size: 16px;
+    padding: 16px;
   }
 }

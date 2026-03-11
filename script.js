@@ -1,33 +1,50 @@
-const display = document.querySelector('.display');
-const buttons = document.querySelectorAll('.buttons button');
+const display = document.getElementById('display');
 
 let currentInput = '';
+let lastInput = '';
 
-buttons.forEach(button => {
-  button.addEventListener('click', () => {
-    const value = button.textContent;
+function appendNumber(num) {
+  currentInput += num;
+  updateDisplay();
+  lastInput = num;
+}
 
-    // Clear screen
-    if (value === 'C') {
-      currentInput = '';
-      display.value = '';
-      return;
-    }
+function appendOperator(op) {
+  if (['+', '-', '*', '/'].includes(lastInput)) {
+    alert('Invalid input sequence!');
+    return;
+  }
+  currentInput += op;
+  updateDisplay();
+  lastInput = op;
+}
 
-    // Calculate result
-    if (value === '=') {
-      try {
-        display.value = eval(currentInput);
-        currentInput = display.value;
-      } catch {
-        display.value = 'Error';
-        currentInput = '';
-      }
-      return;
-    }
+function appendDot() {
+  if (currentInput.endsWith('.')) return;
+  currentInput += '.';
+  updateDisplay();
+  lastInput = '.';
+}
 
-    // Append numbers/operators
-    currentInput += value;
-    display.value = currentInput;
-  });
-});
+function clearDisplay() {
+  currentInput = '';
+  lastInput = '';
+  updateDisplay();
+}
+
+function calculateResult() {
+  try {
+    const result = eval(currentInput);
+    display.value = result;
+    currentInput = result.toString();
+    lastInput = '';
+  } catch (e) {
+    display.value = 'Error';
+    currentInput = '';
+    lastInput = '';
+  }
+}
+
+function updateDisplay() {
+  display.value = currentInput || '0';
+}

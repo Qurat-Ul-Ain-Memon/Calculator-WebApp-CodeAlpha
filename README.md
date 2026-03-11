@@ -1,2 +1,1 @@
-Built as part of my CodeAlpha Web Development Internship to practice JavaScript logic and error handling.
-
+Interactive Calculator Project built as part of my CodeAlpha Web Development Internship. Practiced JavaScript logic, event handling, and error debugging. This calculator supports addition, subtraction, multiplication, and division, with real-time input validation. Developed using HTML, CSS, and vanilla JavaScript.

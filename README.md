@@ -3,8 +3,8 @@
 This project is part of my CodeAlpha Web Development Internship.
 
 ## Technologies Used
-HTML
-CSS
+HTML  
+CSS  
 JavaScript
 
 ## Features
@@ -13,6 +13,9 @@ JavaScript
 - Multiplication
 - Division
 - Error handling
+
+## Live Demo
+[Visit Live Calculator](https://qurat-ul-ain-memon.github.io/codealpha-calculator-task/)
 
 ## Author
 Qurat Ul Ain
